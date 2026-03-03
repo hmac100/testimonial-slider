@@ -1,0 +1,264 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+--primary:hsl(240, 38%, 20%);
+--secondary: hsl(240, 18%, 77%);
+--primary-alpha: hsl(240, 38%, 20%, 0.4);
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  min-height: 100vh; 
+  padding-bottom: 4rem;
+  background-image: url(assets/pattern-curve.svg);
+  background-position:bottom left;
+  background-repeat:no-repeat;
+  background-size:74% auto;
+}
+
+.slider-container {
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 1.5rem;
+
+}
+
+.img-container { 
+  background-image: url('assets/pattern-bg.svg');
+  background-repeat: no-repeat;
+  background-size: contain; 
+  background-position: center; 
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 1rem;
+  position: relative;
+  padding: 2rem;  
+}
+
+.testimonial-img {
+  width: 100%;
+  height: auto;
+  align-self: center;
+  display: block;  /* delete default bottom gap  */ 
+  border-radius: 7px;
+  box-shadow: 0px 25px 30px -5px var(--primary-alpha);
+
+}
+
+.testimonial-text {
+  position: relative;
+  text-align: center;
+  max-width: 370px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.6rem;
+  color: var(--primary);
+  padding-top: 1rem;
+  margin: 3rem  .5rem 1.5rem .5rem;
+}
+
+.testimonial-text::before {
+  content: ""; 
+  position: absolute;
+  background-image: url(assets/pattern-quotes.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 70px; 
+  height: 50px;
+  left: 50%;
+  transform: translate(-50%, -25px);
+}
+
+figcaption {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+ 
+}
+
+figcaption cite {
+  color: var(--primary);
+  font-weight: 700;
+  font-style: normal;
+  margin-bottom: 2px;
+}
+
+figcaption span {
+  color: var(--secondary);
+  font-weight: 500;
+  font-style: normal;
+  z-index: 30;
+}
+
+.controls {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:84px;
+  height: 40px;
+  border-radius:40px;
+  background: hsl(0, 0%, 100%);
+  display: flex;
+  justify-content: center;
+  gap: 2rem; 
+}
+
+.prev,
+.next {
+  padding: 10px 0;
+  border: none;
+  background: none;
+}
+
+.prev {
+   padding-left: 2px;
+}
+.next {
+   padding-right: 2px;
+}
+
+img.slider-next,
+img.slider-prev {
+  width:10px;
+ height:15px;
+ cursor: pointer;
+}
+
+/* |==============TABLET=============| */
+
+@media screen and (min-width: 800px) and (max-width: 999px) {
+  body { 
+
+align-content: center;
+justify-content: center;
+}
+}
+
+
+
+/* |==============DESKTOP=============| */
+
+@media screen and (min-width:1000px) {
+
+
+  body {
+ /* assets/pattern-curve.svg */
+  background-size:60% auto;
+
+
+}
+
+.slider-container {
+ width: 100%;
+  min-height: 100vh;
+  padding:0  6rem;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-card{
+  display: flex;
+  width: 100%;
+  flex-direction: row-reverse;
+  text-align: left;
+  align-items: center;
+}
+
+
+.img-container { 
+  position: relative;
+  display: flex;
+  flex: 0 0 540px;
+  max-width: 650px;
+  margin: 0;
+  justify-content: center;
+  padding: 4rem;
+  
+}
+
+.testimonial-img {
+  width: 540px;
+  max-width: 540px; 
+  aspect-ratio: 1/1; 
+  box-shadow: 0px 25px 30px -5px var(--primary-alpha);
+}
+
+.controls {
+  position: absolute;
+  align-items: center;
+  display: flex;
+  bottom: 40px;
+  left: 20%;
+  gap: 3rem;
+  transform: translate(-10px, 0%);
+  /* background: red; */
+  padding: 1.8rem 3.5rem;
+}
+
+
+.prev {
+   padding-left: 5px;
+}
+.next {
+   padding-right: 5px;
+}
+
+img.slider-next,
+img.slider-prev {
+  width:13px;
+ height:20px;
+}
+
+.testimonial-text::before {
+/* assets/pattern-quotes.svg */
+  width: 120px; 
+  height: 150px;
+  left: 25%;
+  transform: translate(-50%, -60px);
+}
+
+.testimonial-text-section {
+  flex: 1;
+  margin-right: -10vw;
+  min-width: 500px;
+}
+
+.testimonial-text {
+  padding:0;
+  margin: 0 0 0 10%;
+  text-align: left;
+  font-size: 2rem;
+  line-height: 2.7rem;
+  max-width: 680px;
+}
+
+figcaption {
+  display: flex;
+  flex-direction: row;
+  justify-self: left;
+  gap:1rem;
+  font-size: 1.3rem;
+  padding-top: 1.3rem;
+  margin-left: 4rem;
+  width: 500px;
+}
+
+}
